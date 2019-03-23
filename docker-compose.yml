@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+
+  loadbalancer:
+    image: nginx
+    volumes:
+    - ./conf.d:/etc/nginx/conf.d:ro
+    - ./data:/data
+    ports:
+    - "8080:80"
