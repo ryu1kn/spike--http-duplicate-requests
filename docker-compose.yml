@@ -7,5 +7,6 @@ services:
     volumes:
     - ./conf.d:/etc/nginx/conf.d:ro
     - ./data:/data
+    - ./log-nginx:/var/log/nginx
     ports:
     - "8080:80"
