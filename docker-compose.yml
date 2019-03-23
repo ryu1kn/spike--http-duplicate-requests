@@ -6,21 +6,12 @@ services:
     image: nginx
     volumes:
     - ./config/nginx-proxy.conf:/etc/nginx/conf.d/default.conf:ro
-    - ./data:/data
-    - ./log/proxy:/var/log/nginx
+    - ./log:/var/log/nginx
     ports:
     - "8080:80"
 
   webapp1:
-    image: nginx
-    volumes:
-    - ./config/nginx-app.conf:/etc/nginx/conf.d/default.conf:ro
-    - ./data:/data
-    - ./log/webapp1:/var/log/nginx
+    image: mendhak/http-https-echo
 
   webapp2:
-    image: nginx
-    volumes:
-    - ./config/nginx-app.conf:/etc/nginx/conf.d/default.conf:ro
-    - ./data:/data
-    - ./log/webapp2:/var/log/nginx
+    image: mendhak/http-https-echo

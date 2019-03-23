@@ -1,7 +1,7 @@
 
 # HTTP Duplicate Requests
 
-Send two identical requests to two different servers.
+Send two identical requests to two different servers using Nginx `ngx_http_mirror_module` module.
 
 ## Usage
 
@@ -9,13 +9,7 @@ Send two identical requests to two different servers.
 $ make start
 ```
 
-Open another terminal session and observe log from all servers
-
-```sh
-$ make log
-```
-
-Make requests to the front proxy server and see what appears in the log.
+Make requests to the front proxy server and see what appears in the docker log.
 
 ```sh
 $ curl http://localhost:8080/hi
