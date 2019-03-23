@@ -10,3 +10,8 @@ services:
     - ./log-nginx:/var/log/nginx
     ports:
     - "8080:80"
+
+  webapp1:
+    image: jankysolutions/requestbin
+    ports:
+    - "8081:8000"
