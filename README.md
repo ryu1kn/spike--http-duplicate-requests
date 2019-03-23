@@ -1,19 +1,28 @@
 
 # HTTP Duplicate Requests
 
-## Usage
-
 Send two identical requests to two different servers.
 
+## Usage
+
 ```sh
-$ docker-compose up
+$ make start
 ```
 
-Then open http://localhost:8080 with your browser.
+Open another terminal session and observe log from all servers
 
-## Endpoints
+```sh
+$ make log
+```
 
+Make requests to the front proxy server and see what appears in the log.
+
+```sh
+$ curl http://localhost:8080/hi
 ```
-/
-/www/
-```
+
+## Refs
+
+* [Config Structure - Beginner’s Guide](https://nginx.org/en/docs/beginners_guide.html#conf_structure)
+* [Module ngx_http_mirror_module](https://nginx.org/en/docs/http/ngx_http_mirror_module.html#directives)
+* [Module ngx_http_upstream_module](https://nginx.org/en/docs/http/ngx_http_upstream_module.html)
